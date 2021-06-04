@@ -8,8 +8,8 @@ function normalized(data){ // i & r
     return [i, r, v, p]
 }
 
-const argFact = (compareFn) => (array) => array.map((el, idx) => [el, idx]).reduce(compareFn)[1]
-const argMax = argFact((min, el) => (el[0] > min[0] ? el : min))
+const argFact = (compareFn) => (array) => array.map((el, idx) => [el, idx]). reduce(compareFn)[1]
+const argMax = argFact((min, el) => (el[0] > min[0] ? el : min ))
 
 function ArgMax(res){
   label = "NORMAL"
@@ -20,15 +20,15 @@ function ArgMax(res){
     console.log(cls_data, argMax(cls_data));
     
   if(argMax(cls_data) == 1){
-    label = "OVER VOLTAGE"
+      label = "OVER VOLTAGE"
   }if(argMax(cls_data) == 0){
-    label = "DROP VOLTAGE"
+      label = "DROP VOLTAGE"
   }
-  return label
+ return label
 }
 
 async function classify(data){
-    let in_dim = 4; //i r v p
+    let in_dim = 4; // i r v p
     
     data = normalized(data);
     shape = [1, in_dim];
@@ -52,6 +52,6 @@ async function classify(data){
 }
 
 module.exports = {
-    classify: classify
+    classify: classify 
 }
   
